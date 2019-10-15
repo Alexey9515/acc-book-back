@@ -80,14 +80,6 @@
                     <promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>
                     <propertyFileWillOverride>true</propertyFileWillOverride>
                 </configuration>
-                <executions>
-                    <execution>
-                        <phase>process-resources</phase>
-                        <goals>
-                            <goal>update</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
             <plugin>
                 <groupId>org.jooq</groupId>
