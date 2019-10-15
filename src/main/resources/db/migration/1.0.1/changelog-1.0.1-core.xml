@@ -1,0 +1,26 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet id="2019-10-14--01-core-schema-1" author="Чугунов Алексей">
+        <sql>
+            CREATE TABLE "users" (
+            "id" SERIAL NOT NULL,
+            "name" VARCHAR(155) NOT NULL UNIQUE,
+            CONSTRAINT users_pk PRIMARY KEY ("id"));
+        </sql>
+    </changeSet>
+
+    <changeSet id="2019-10-14--01-core-schema-2" author="Чугунов Алексей">
+        <sql>
+            CREATE TABLE "salaries" (
+            "id" SERIAL NOT NULL,
+            "user_id" INT NOT NULL UNIQUE,
+            "value" FLOAT NOT NULL,
+            CONSTRAINT salaries_pk PRIMARY KEY ("id"),
+            CONSTRAINT salaries_fk0 FOREIGN KEY ("user_id") REFERENCES "users" ("id"));
+        </sql>
+    </changeSet>
+</databaseChangeLog>
