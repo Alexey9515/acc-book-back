@@ -1,8 +1,8 @@
 FROM ubuntu
 
-ENV DBUSERNAME
-ENV DBPSW
-ENV DBHOST
+ENV DBUSERNAME postgres
+ENV DBPSW root
+ENV DBHOST localhost
 
 RUN apt-get update
 RUN apt-get install -y openjdk-8-jre
