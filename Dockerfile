@@ -9,7 +9,7 @@ RUN apt-get install -y openjdk-8-jre
 
 VOLUME /app
 WORKDIR /app
-COPY ./target /a
+COPY ./target /app
 
 EXPOSE 8080
 
