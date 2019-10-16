@@ -1,8 +1,8 @@
 FROM ubuntu
 
-ARG dbusername=postgres
-ARG dbpassword=root
-ARG dbhost=localhost
+ENV dbusername=postgres
+ENV dbpassword=root
+ENV dbhost=localhost
 
 RUN apt-get update
 RUN apt-get install -y openjdk-8-jre
